@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/assets/htmx.org/dist/htmx.min.js"></script>
+    <title>Ktor/HTMX Example</title>
+</head>
+<body>
+<h1>Hello, {{user.name}}</h1>
+<input type="text" name="q"
+       hx-get="/countries"
+       hx-trigger="keyup changed delay:500ms"
+       hx-target="#search-results"
+       placeholder="Search...">
+<div id="search-results" hx-get="/countries" hx-trigger="load">Loading...</div>
+</body>
+</html>
